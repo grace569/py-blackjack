@@ -11,7 +11,9 @@ class Hand:
             self.aces += 1
 
     def adjust_for_ace(self):
-        self.value -= self.aces * 10
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
 
     def __str__(self):
         return f'The value of the hand is {self.value}'
