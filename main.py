@@ -2,22 +2,6 @@ from player import Player
 from deck import Deck
 
 
-def take_bet():
-    repeat = True
-    bet = 0
-    while repeat:
-        try:
-            bet = int(input('Please place your bet: '))
-        except ValueError:
-            print('The bet value must be an integer')
-            continue
-        if bet > 0:
-            repeat = False
-        else:
-            continue
-    return bet
-
-
 def hit(deck, hand):
     card = deck.deal()
     hand.add_card(card)
