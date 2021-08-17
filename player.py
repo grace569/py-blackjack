@@ -9,11 +9,11 @@ class Player:
         self.bet = 0
 
     def place_bet(self, amount):
-        try:
+        if amount > self.chips:
+            print('Your chips are not enough to cover the bet')
+        else:
             self.chips -= amount
             self.bet = amount
-        except self.chips < 0:
-            print('Your chips are not enough to cover the bet')
 
     def win_bet(self):
         self.chips += self.bet
